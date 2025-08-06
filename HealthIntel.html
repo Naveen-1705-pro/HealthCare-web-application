@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthIntel AI - AI-Enhanced Health Checkup Experience</title>
+    <link rel="stylesheet" href="health.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-heartbeat logo-icon"></i>
+                    <span class="logo-text">HealthIntel AI</span>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="cta-button" id="start-checkup">
+                    <span>Start My Checkup</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="floating-elements">
+                <div class="floating-element pulse"></div>
+                <div class="floating-element heartbeat"></div>
+                <div class="floating-element dna-helix"></div>
+                <div class="floating-element medical-cross"></div>
+            </div>
+            <canvas id="heartbeat-canvas"></canvas>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Your Health,</span>
+                        <span class="title-line accent">AI-Enhanced</span>
+                        <span class="title-line">& Personalized</span>
+                    </h1>
+                    <p class="hero-description">
+                        Experience the future of healthcare with our AI-powered checkup platform. 
+                        Get personalized health insights, track your wellness journey, and receive 
+                        expert recommendations tailored just for you.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="primary-button" id="start-journey">
+                            <span>Start Your Health Journey</span>
+                            <i class="fas fa-rocket"></i>
+                        </button>
+                        <button class="secondary-button" id="watch-demo">
+                            <i class="fas fa-play"></i>
+                            <span>Watch How It Works</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="health-dashboard">
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <i class="fas fa-heart health-icon"></i>
+                                <span>Heart Rate</span>
+                            </div>
+                            <div class="metric-value">
+                                <span class="value" id="heart-rate">72</span>
+                                <span class="unit">BPM</span>
+                            </div>
+                            <div class="metric-chart">
+                                <canvas id="heart-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <i class="fas fa-brain health-icon"></i>
+                                <span>Wellness Score</span>
+                            </div>
+                            <div class="score-container">
+                                <div class="circular-progress" id="wellness-score">
+                                    <div class="progress-value">85%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <i class="fas fa-chart-line health-icon"></i>
+                                <span>Health Trends</span>
+                            </div>
+                            <div class="trend-indicators">
+                                <div class="trend-item">
+                                    <span class="trend-label">Sleep</span>
+                                    <div class="trend-bar">
+                                        <div class="trend-fill" style="width: 78%"></div>
+                                    </div>
+                                </div>
+                                <div class="trend-item">
+                                    <span class="trend-label">Exercise</span>
+                                    <div class="trend-bar">
+                                        <div class="trend-fill" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                                <div class="trend-item">
+                                    <span class="trend-label">Nutrition</span>
+                                    <div class="trend-bar">
+                                        <div class="trend-fill" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-header">
+                                <i class="fas fa-bolt health-icon"></i>
+                                <span>Energy Score</span>
+                            </div>
+                            <div class="score-container">
+                                <div class="circular-progress1" id="wellness-score">
+                                    <div class="progress-value">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section class="demo-section" id="demo">
+        <div class="demo-container">
+            <div class="demo-content">
+                <h2 class="demo-title">See HealthIntel AI in Action</h2>
+                <p class="demo-description">
+                    Watch how our AI-powered platform transforms your health checkup experience 
+                    into an interactive, personalized journey.
+                </p>
+                
+                <div class="video-container" id="video-container">
+                    <div class="video-placeholder" id="video-placeholder">
+                        <div class="play-button" id="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-overlay">
+                            <h3>How Your Virtual Health Checkup Works</h3>
+                            <p>15 second • AI-guided walkthrough</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Actual video (hidden initially) -->
+                    <video id="demo-video" controls style="display: none;">
+                        <!-- <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4"> -->
+                        <source src="https://media.istockphoto.com/id/1498919348/video/two-neuroscientists-working-with-computer-powered-animated-vfx-hologram-of-human-brain-and.mp4?s=mp4-640x640-is&k=20&c=B98z9Rk5X1rF40CoZES3vdEV60yxwP6vVKIoLTcCjXM=" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="demo-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Upload Reports</h4>
+                            <p>Drag & drop your medical reports for instant analysis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>AI Analysis</h4>
+                            <p>Advanced AI reviews your data and provides insights</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Personalized Results</h4>
+                            <p>Get tailored recommendations for better health</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose HealthIntel AI?</h2>
+                <p class="section-description">
+                     where technology meets trust, and your well-being comes first.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>❝ Advanced machine learning algorithms analyze your health data with medical-grade accuracy.❞ </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>❝ Your health data is encrypted and protected with bank-level security protocols.❞</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Real-Time Monitoring</h3>
+                    <p>❝Track your health metrics continuously with instant alerts and recommendations.❞</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Expert Consultation</h3>
+                    <p>❝ Connect with certified healthcare professionals for personalized guidance.❞</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Service</h3>
+                    <p>❝ Experience healthcare like never before with HealthIntel AI.
+                    Get instant report analysis and symptom tracking in seconds.
+                    Fast, accurate, and AI-powered for smarter decisions.
+                    Your health, our priority — without the wait.
+                    Join thousands who trust HealthIntel AI for real-time care.❞</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Connection with users</h3>
+                    <p>❝ HealthIntel AI isn’t just about data — it’s about care, connection, and being 
+                    there when you need it most.Because every heartbeat matters.❞</p>
+                </div>
+            </div>
+        </div>
+    </section>
+      <div class="newvideo">
+        <video src="https://videos.pexels.com/video-files/5838986/5838986-hd_1920_1080_24fps.mp4" controls autoplay class="healthvideo"></video>
+      </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Health?</h2>
+                <p class="cta-description">
+                    Join thousands of users who have already started their journey to better health.
+                </p>
+                <button class="cta-main-button" id="final-cta">
+                    <span>Begin Your Checkup Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="cta-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Users Helped</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Hours Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <h2 class="aboutxt">About HealthIntel AI</h2>
+                <p class="section-description">
+                     where technology meets trust, and your well-being comes first.
+                </p>
+    <div class="newvideo">
+        <video src="newvideo.mp4" controls  class="aboutplatform"></video>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>HealthIntel AI</span>
+                    </div>
+                    <p>Empowering better health through AI-driven insights and personalized care.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                     <div class="newsletter">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="btn btn-stellar"><i class="fas fa-envelope"></i></button>
+                    </div>
+                    <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthIntel AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Checkup Start -->
+    <div class="modal" id="checkup-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Start Your Health Checkup</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Your personalized health journey is about to begin. We'll guide you through a comprehensive checkup process.</p>
+                <div class="checkup-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-text">Next page Dedicated for health checkup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Personal Information</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Health Assessment</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-text">AI Analysis</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-text">Personalized Results</div>
+                    </div>
+                </div>
+                <a href="https://transcendent-fudge-0f86af.netlify.app"><button class="modal-button">Continue to Personal Healthcare Assistant page</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="health.js"></script>
+</body>
+</html>
